@@ -1,4 +1,4 @@
-# 🌉 Neon Bridges
+# 🌉 Neon Bridge
 *Private chat + file sharing. Phone-to-phone. No towers. No tracking.*
 
 ✨ Your privacy is our policy! Keeping your name out your ISP's mouth, one file share at a time!
