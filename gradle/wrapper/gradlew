@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -e
+cd "$(dirname "$0")"
+exec java -Xmx64m -Xms64m -jar gradle/wrapper/gradle-wrapper.jar "$@"
