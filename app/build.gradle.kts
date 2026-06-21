@@ -41,5 +41,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Crypto for ephemeral keys
     implementation("net.java.dev.jna:jna:5.14.0@aar")
-    implementation("com.guardsquare:proguard-base:7.4.0")
 }
