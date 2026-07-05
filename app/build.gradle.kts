@@ -40,7 +40,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Crypto for ephemeral keys
-    implementation("io.ionspin.kotlin:kotlin-multiplatform-libsodium:0.9.4")
+    implementation("com.ionspin.kotlin:multiplatform-crypto-libsodium-bindings:0.9.4")
     implementation("net.java.dev.jna:jna:5.14.0@aar")
     implementation("com.guardsquare:proguard-base:7.4.0")
 }
