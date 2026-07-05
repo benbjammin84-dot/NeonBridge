@@ -41,8 +41,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Crypto for ephemeral keys
     implementation("net.java.dev.jna:jna:5.14.0@aar")
-    // Native libsodium JNI bindings
-    implementation("org.libsodium:libsodium-jni:1.0.18")
+    // Kotlin Multiplatform libsodium
+    implementation("io.ionspin.kotlin:kotlin-multiplatform-libsodium:0.9.4")
     // Encrypted SharedPreferences
     implementation("androidx.security:security-crypto:1.1.0")
 }
