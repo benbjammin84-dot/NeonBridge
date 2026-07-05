@@ -40,6 +40,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Crypto for ephemeral keys
+    implementation("com.github.joshdholtz:libsodium-jni:1.0.19")
     implementation("net.java.dev.jna:jna:5.14.0@aar")
     implementation("com.guardsquare:proguard-base:7.4.0")
 }
