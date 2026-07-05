@@ -3,24 +3,31 @@
 package com.neonbridge
 
 import android.content.Context
+import android.util.Base64
 import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKeys
+import androidx.security.crypto.MasterKey
 
 class VaultManager(context: Context) {
 
+    private val masterKey = MasterKey.Builder(context)
+        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+        .build()
+
     private val sharedPreferences = EncryptedSharedPreferences.create(
-        "encrypted_prefs",
-        MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC),
         context,
+        "encrypted_prefs",
+        masterKey,
         EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
 
     fun saveFile(key: String, value: ByteArray) {
-        sharedPreferences.edit().putByteArray(key, value).apply()
+        val encoded = Base64.encodeToString(value, Base64.DEFAULT)
+        sharedPreferences.edit().putString(key, encoded).apply()
     }
 
     fun loadFile(key: String): ByteArray? {
-        return sharedPreferences.getByteArray(key, null)
+        val encoded = sharedPreferences.getString(key, null) ?: return null
+        return Base64.decode(encoded, Base64.DEFAULT)
     }
 }

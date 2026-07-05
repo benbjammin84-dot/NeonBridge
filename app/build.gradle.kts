@@ -42,5 +42,8 @@ dependencies {
     // Crypto for ephemeral keys
     implementation("com.github.joshdholtz:libsodium-jni:1.0.19")
     implementation("net.java.dev.jna:jna:5.14.0@aar")
-    implementation("com.guardsquare:proguard-base:7.4.0")
+    // Kotlin Multiplatform libsodium
+    implementation("io.ionspin.kotlin:kotlin-multiplatform-libsodium:0.9.4")
+    // Encrypted SharedPreferences
+    implementation("androidx.security:security-crypto:1.1.0")
 }
