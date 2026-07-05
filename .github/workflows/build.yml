@@ -17,13 +17,12 @@ jobs:
         run: yes | sdkmanager --licenses || true
       
       - name: Generate Gradle Wrapper
-        working-directory: ./NeonBridge
         run: |
           gradle wrapper --gradle-version 8.7
       
       - name: Build Debug APK
-        working-directory: ./NeonBridge
         run: |
+          chmod +x gradlew
           ./gradlew clean
           ./gradlew assembleDebug --no-daemon
       
@@ -31,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: neonbridge-debug
-          path: NeonBridge/app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/debug/*.apk
